@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="350.0" style="-fx-background-color:#ffffff" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mypage.Mypage_controller">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="350.0">
+         <children>
+            <AnchorPane layoutX="39.0" layoutY="111.0" prefHeight="44.0" prefWidth="270.0" style="-fx-background-color:#EBF4FF" />
+            <AnchorPane layoutX="39.0" layoutY="167.0" prefHeight="44.0" prefWidth="270.0" style="-fx-background-color:#EBF4FF" />
+            <AnchorPane layoutX="40.0" layoutY="223.0" prefHeight="44.0" prefWidth="270.0" style="-fx-background-color:#EBF4FF" />
+            <AnchorPane layoutX="39.0" layoutY="278.0" prefHeight="44.0" prefWidth="270.0" style="-fx-background-color:#EBF4FF" />
+            <AnchorPane layoutX="40.0" layoutY="333.0" prefHeight="44.0" prefWidth="270.0" style="-fx-background-color:#EBF4FF" />
+            <AnchorPane layoutX="40.0" layoutY="388.0" prefHeight="44.0" prefWidth="270.0" style="-fx-background-color:#EBF4FF" />
+            <AnchorPane layoutX="40.0" layoutY="443.0" prefHeight="44.0" prefWidth="270.0" style="-fx-background-color:#EBF4FF" />
+            <Label layoutX="75.0" layoutY="125.0" style="-fx-text-fill:#003580" text="ID" />
+            <Label layoutX="72.0" layoutY="180.0" style="-fx-text-fill:#003580" text="PW" />
+            <Label layoutX="69.0" layoutY="236.0" style="-fx-text-fill:#003580" text="Name" />
+            <Label layoutX="71.0" layoutY="291.0" style="-fx-text-fill:#003580" text="Phone" />
+            <Label layoutX="117.0" layoutY="34.0" style="-fx-text-fill:#003580" text="MY PAGE">
+               <font>
+                  <Font name="Arial Bold" size="25.0" />
+               </font>
+            </Label>
+                     
+            <Label fx:id="useridlabel" layoutX="167.0" layoutY="125.0" style="-fx-text-fill:#003580" text="My ID" />
+            <Label fx:id="userpwlabel" layoutX="168.0" layoutY="180.0" style="-fx-text-fill:#003580" text="My PW" />
+            <Label fx:id="usernamelabel" layoutX="168.0" layoutY="236.0" style="-fx-text-fill:#003580" text="My Name" />
+            <Label fx:id="userphonelabel" layoutX="168.0" layoutY="291.0" style="-fx-text-fill:#003580" text="My Phone" />
+            <Label fx:id="userlocationlabel" layoutX="168.0" layoutY="402.0" style="-fx-text-fill:#003580" text="My 탑승지역" />
+            <Label fx:id="userseatlabel" layoutX="168.0" layoutY="457.0" style="-fx-text-fill:#003580" text="My 선호좌석" />
+            <Button fx:id="userinfo" layoutX="132.0" layoutY="524.0" mnemonicParsing="false" onAction="#getMypagecheck" onMouseClicked="#getMypagecheck" styleClass="button" text="정보조회" />
+            <Button fx:id="userclose" layoutX="256.0" layoutY="524.0" mnemonicParsing="false" onAction="#mypageClose" onMouseClicked="#mypageClose" styleClass="button" text="닫기" />
+			<Button fx:id="upbtn" layoutX="27.0" layoutY="524.0" mnemonicParsing="false" onAction="#update" onMouseClicked="#update" text="업데이트" />
+         </children></AnchorPane>
+      <Label fx:id="useremaillabel" layoutX="167.0" layoutY="346.0" style="-fx-text-fill:#003580" text="My Email" />
+      <Label layoutX="72.0" layoutY="402.0" style="-fx-text-fill:#003580" text="탑승지역" />
+      <Label layoutX="72.0" layoutY="457.0" style="-fx-text-fill:#003580" text="선호좌석" />
+      <Label layoutX="72.0" layoutY="347.0" style="-fx-text-fill:#003580" text="Email" />
+      
+   </children>
+</AnchorPane>

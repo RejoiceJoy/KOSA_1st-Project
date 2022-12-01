@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<!-- 코드 작성자 : 김대영,박주영 -->
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="account.AccountController">
+	<children>
+	
+		<!-- 배경 이미지 -->
+		<ImageView fitHeight="900.0" fitWidth="810.0" pickOnBounds="true">
+			<image>
+				<Image url="@images/background5.jpg" />
+			</image>
+		</ImageView>
+		
+			<!-- 상단 안내 문구 -->
+			<Label alignment="CENTER" layoutX="327.0" layoutY="134.0" text="사용자 정보 확인" textFill="WHITE" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="100.0">
+				<font>
+					<Font size="36.0" />
+				</font>
+			</Label>
+			
+			<!-- 나의 자산 버튼 -->
+			<Button fx:id="assetButton" layoutX="293.0" layoutY="668.0" mnemonicParsing="false" onAction="#goAsset" prefHeight="66.0" prefWidth="224.0" text="나의 자산">
+         		<font>
+            		<Font size="36.0" />
+         		</font>
+      		</Button>
+				
+			<!-- 아이디 출력 칸 -->
+			<Label alignment="CENTER_RIGHT" layoutX="218.0" layoutY="240.0" prefHeight="21.0" prefWidth="80.0" text="아이디" textAlignment="RIGHT" textFill="WHITE">
+              <font>
+                 <Font size="15.0" />
+              </font></Label>
+			<TextField fx:id="selectID" layoutX="320.0" layoutY="240.0" prefHeight="33.0" prefWidth="207.0">
+              <font>
+                 <Font size="15.0" />
+              </font></TextField>
+				
+			<!-- 비밀번호 출력 칸 -->
+			<Label alignment="CENTER_RIGHT" layoutX="223.0" layoutY="275.0" prefHeight="21.0" prefWidth="73.0" text="비밀번호" textAlignment="RIGHT" textFill="WHITE">
+              <font>
+                 <Font size="15.0" />
+              </font></Label>
+			<TextField fx:id="selectPW" layoutX="320.0" layoutY="275.0" prefHeight="33.0" prefWidth="207.0">
+              <font>
+                 <Font size="15.0" />
+              </font></TextField>
+				
+			<!-- 사용자 이름 출력칸 --> 
+			<Label alignment="CENTER_RIGHT" layoutX="245.0" layoutY="310.0" prefHeight="21.0" prefWidth="52.0" text="이름" textFill="WHITE">
+              <font>
+                 <Font size="15.0" />
+              </font></Label>
+			<TextField fx:id="selectName" layoutX="320.0" layoutY="310.0" prefHeight="33.0" prefWidth="207.0">
+              <font>
+                 <Font size="15.0" />
+              </font></TextField>
+				
+			<!-- 휴대폰 번호 출력 칸 -->
+			<Label alignment="CENTER_RIGHT" layoutX="215.0" layoutY="345.0" prefHeight="21.0" prefWidth="83.0" text="휴대폰번호" textAlignment="RIGHT" textFill="WHITE">
+              <font>
+                 <Font size="15.0" />
+              </font></Label>
+			<TextField fx:id="selectPhone" layoutX="320.0" layoutY="345.0" prefHeight="33.0" prefWidth="207.0">
+              <font>
+                 <Font size="15.0" />
+              </font></TextField>
+			
+			<!-- 생년월일 출력 칸 -->
+			<Label alignment="CENTER_RIGHT" layoutX="215.0" layoutY="380.0" prefHeight="21.0" prefWidth="83.0" text="생년월일" textAlignment="RIGHT" textFill="WHITE">
+              <font>
+                 <Font size="15.0" />
+              </font></Label>
+			<TextField fx:id="selectbirthday" layoutX="320.0" layoutY="380.0" prefHeight="33.0" prefWidth="207.0">
+              <font>
+                 <Font size="15.0" />
+              </font></TextField>
+              	
+			<!-- 나이 출력 칸 -->
+			<Label alignment="CENTER_RIGHT" layoutX="247.0" layoutY="415.0" prefHeight="21.0" prefWidth="52.0" text="나이" textAlignment="RIGHT" textFill="WHITE">
+              <font>
+                 <Font size="15.0" />
+              </font></Label>
+			<TextField fx:id="selectage" layoutX="320.0" layoutY="415.0" prefHeight="33.0" prefWidth="207.0">
+              <font>
+                 <Font size="15.0" />
+              </font></TextField>
+				
+			<!-- 성별 출력 칸 -->
+			<Label alignment="CENTER_RIGHT" layoutX="221.0" layoutY="450.0" prefHeight="21.0" prefWidth="80.0" text="성별" textAlignment="RIGHT" textFill="WHITE">
+              <font>
+                 <Font size="15.0" />
+              </font></Label>
+			<TextField fx:id="selectSex" layoutX="320.0" layoutY="450.0" prefHeight="33.0" prefWidth="207.0">
+              <font>
+                 <Font size="15.0" />
+              </font></TextField>
+				
+			<!-- 지역번호 출력 칸 -->
+			<Label alignment="CENTER_RIGHT" layoutX="231.0" layoutY="485.0" prefHeight="21.0" prefWidth="69.0" text="지역번호" textAlignment="RIGHT" textFill="WHITE">
+              <font>
+                 <Font size="15.0" />
+              </font></Label>
+			<TextField fx:id="selectRegion" layoutX="320.0" layoutY="485.0" prefHeight="33.0" prefWidth="207.0">
+              <font>
+                 <Font size="15.0" />
+              </font></TextField>
+              
+             <!-- 토글버튼 : 가계부 --> 
+		      <ToggleButton fx:id="householdButton" layoutX="33.0" layoutY="839.0" mnemonicParsing="false" onAction="#selectToggleButton" prefHeight="80.0" prefWidth="270.0" style="-fx-border-color: deepskyblue;" text="가계부" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+		      
+		      	<!-- 토글 그룹 생성 -->
+		         <toggleGroup>
+		            <ToggleGroup fx:id="toggleGroup" />
+		         </toggleGroup>
+		         <font>
+		            <Font size="36.0" />
+		         </font>
+		      </ToggleButton>
+		      
+		      <!-- 토글버튼 : 통계 -->
+		      <ToggleButton fx:id="chartButton" layoutX="270.0" layoutY="819.0" mnemonicParsing="false" onAction="#selectToggleButton" prefHeight="80.0" prefWidth="270.0" style="-fx-border-color: deepskyblue;" text="통계" toggleGroup="$toggleGroup" AnchorPane.bottomAnchor="0.0">
+		         <font>
+		            <Font size="36.0" />
+		         </font></ToggleButton>
+		      
+		      <!-- 토글버튼 : 계정관리 -->
+		      <ToggleButton fx:id="accountButton" layoutX="540.0" layoutY="818.0" mnemonicParsing="false" onAction="#selectToggleButton" prefHeight="80.0" prefWidth="270.0" style="-fx-border-color: deepskyblue;" text="계정관리" toggleGroup="$toggleGroup" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+		         <font>
+		            <Font size="36.0" />
+		         </font></ToggleButton>  
+	</children>
+</AnchorPane>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.CheckController">
+   <children>
+      <Label fx:id="checkmessage" alignment="CENTER" layoutX="50.0" layoutY="28.0" prefHeight="150.0" prefWidth="500.0" text="포인트 적립 하시겠습니까?">
+         <font>
+            <Font name="LG Smart UI Bold" size="18.0" />
+         </font></Label>
+      <Button fx:id="savepoint" layoutX="165.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleSavepointAction" text="적립하기">
+      		<font>
+            <Font name="LG Smart UI Regular" size="18.0" />
+         </font>
+         </Button>
+      <Button fx:id="exit" layoutX="348.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleExitAction" text="종료하기">
+      	<font>
+            <Font name="LG Smart UI Regular" size="18.0" />
+         </font>
+         </Button>
+   </children>
+</AnchorPane>

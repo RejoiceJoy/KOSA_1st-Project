@@ -1,0 +1,116 @@
+--코드 작성자 : 김대영
+
+--테이블 생성을 위해 우선 drop
+drop table oteam.household purge;
+drop table oteam.members   purge;
+drop table oteam.region purge;
+
+--시퀀스 생성을 위해 drop
+DROP SEQUENCE member_seq;
+DROP SEQUENCE household_seq;
+
+--사용자코드(member_code)생성할 시퀀스 선언
+CREATE SEQUENCE member_seq
+       INCREMENT BY 1
+       START WITH 1
+       MINVALUE 1
+       MAXVALUE 99999
+       NOCYCLE
+       NOCACHE; 
+
+--사용자(member) 테이블 생성
+CREATE TABLE members (
+    member_code  NUMBER(10),
+    member_id    VARCHAR2(20),
+    member_pw    VARCHAR2(20),
+    member_name  VARCHAR2(20),
+    member_phone  NUMBER(11),
+    member_birthday   VARCHAR2(10),
+    member_sex  CHAR(1),
+    region_code  VARCHAR2(10)
+);
+
+--members 테이블의 not null 제약조건
+ALTER TABLE members MODIFY member_code CONSTRAINT member_code_nn NOT NULL;
+ALTER TABLE members MODIFY member_id CONSTRAINT member_id_nn NOT NULL;
+ALTER TABLE members MODIFY member_pw CONSTRAINT member_pw_nn NOT NULL;
+ALTER TABLE members MODIFY member_name CONSTRAINT member_name_nn NOT NULL;
+ALTER TABLE members MODIFY member_birthday CONSTRAINT member_birthday_nn NOT NULL;
+ALTER TABLE members MODIFY member_sex CONSTRAINT member_sex_nn NOT NULL;
+ALTER TABLE members MODIFY region_code CONSTRAINT member_r_code_nn NOT NULL;
+
+--members 테이블의 unique , primary key 제약조건
+ALTER TABLE members ADD CONSTRAINT member_code_pk PRIMARY KEY ( member_code );
+ALTER TABLE members ADD CONSTRAINT member_id_uk UNIQUE ( member_id );
+ALTER TABLE members ADD CONSTRAINT member_phone_uk UNIQUE ( member_phone );
+
+
+--view 생성을 위해 우선 drop
+drop view member_age_view;
+
+--사용자 나이 출력 전용 view 생성
+CREATE VIEW member_age_view
+AS
+(
+    SELECT 
+    TRUNC(months_between(sysdate,member_birthday)/12) AS "age"
+    ,member_code
+    FROM members
+);
+
+--view 잘 만들어 졌는지 확인
+select * from member_age_view;
+
+--가계부 코드(household_code) 생성할 시퀀스 선언
+CREATE SEQUENCE household_seq
+       INCREMENT BY 1
+       START WITH 1
+       MINVALUE 1
+       MAXVALUE 999999
+       NOCYCLE
+       NOCACHE;
+
+
+--가계부(household) 테이블 생성
+CREATE TABLE household (
+    household_code  NUMBER(10),
+    household_type	VARCHAR2(20),
+    household_category	VARCHAR2(30),
+    household_date	DATE,
+    household_money NUMBER(12),
+    household_memo VARCHAR2(50),
+    member_code  NUMBER(10)
+);
+
+--household 테이블의 not null 제약조건
+ALTER TABLE household MODIFY household_code CONSTRAINT household_code_nn NOT NULL;
+ALTER TABLE household MODIFY household_type CONSTRAINT household_type_nn NOT NULL;
+ALTER TABLE household MODIFY household_category CONSTRAINT household_category_nn NOT NULL;
+ALTER TABLE household MODIFY household_date CONSTRAINT household_date_nn NOT NULL;
+ALTER TABLE household MODIFY household_money CONSTRAINT household_money_nn NOT NULL;
+ALTER TABLE household MODIFY member_code CONSTRAINT household_m_code_nn NOT NULL;
+
+--household 테이블의 unique , primary key 제약조건
+ALTER TABLE household ADD CONSTRAINT household_code_pk PRIMARY KEY ( household_code );
+
+
+--지역(region) 테이블 생성
+CREATE TABLE region (
+    region_code  VARCHAR2(10),
+    region_name	VARCHAR2(20)
+);
+
+--region 테이블의 not null 제약조건
+ALTER TABLE region MODIFY region_code CONSTRAINT region_code_nn NOT NULL;
+ALTER TABLE region MODIFY region_name CONSTRAINT region_name_nn NOT NULL;
+
+--region 테이블의 unique , primary key 제약조건
+ALTER TABLE region ADD CONSTRAINT region_code_pk PRIMARY KEY ( region_code );
+
+--members 테이블의 foreign key 제약조건
+ALTER TABLE members ADD CONSTRAINT member_region_fk FOREIGN KEY(region_code) 
+REFERENCES region (region_code);
+
+--household 테이블의 foreign key 제약조건
+ALTER TABLE household ADD CONSTRAINT household_member_fk FOREIGN KEY(member_code) 
+REFERENCES members (member_code);

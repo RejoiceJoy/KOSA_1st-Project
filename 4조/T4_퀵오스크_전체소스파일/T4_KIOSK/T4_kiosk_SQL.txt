@@ -1,0 +1,124 @@
+create user T4
+identified by T4;
+
+grant connect, resource, dba
+to T4;
+
+create table T4.MENU
+(MENU_ID varchar2(10) PRIMARY KEY,
+MENU_NAME varchar2(50) NOT NULL,
+UNIT_COST number,
+UNIT_PRICE number);
+
+insert into T4.MENU
+values (101, '아메리카노', 350, 4000);
+insert into MENU
+values (102, '카페라떼', 400, 5000);
+insert into MENU
+values (103, '에스프레소', 600, 6000);
+insert into MENU
+values (104, '우유', 50, 3000);
+insert into MENU
+values (105, '모닝빵', 20, 2000);	
+insert into MENU
+values (106, '조각케잌', 2000, 6000);
+insert into MENU
+values (107, '쿠키', 3000, 4000);
+insert into MENU
+values (108, '마카롱', 1200, 2500);
+insert into MENU
+values (109, '아이스티', 200, 6000);
+insert into MENU
+values (110, '초코라떼', 250, 6000);
+
+CREATE TABLE    T4.ORDER_LIST
+(ORDER_ID       VARCHAR2(14)    PRIMARY KEY,
+MENU_ID         VARCHAR2(10)   CONSTRAINT menu_id_fk REFERENCES MENU(MENU_ID),
+MENU_NAME       VARCHAR2(50) NOT NULL,
+UNIT_PRICE      NUMBER,
+NUM_OF_SALES    NUMBER);
+
+create table T4.SETTLEMENT
+( MENU_ID varchar2(10) PRIMARY KEY,
+MENU_NAME varchar2(50) NOT NULL,
+NUM_OF_SALES  number,
+UNIT_COST number,	
+UNIT_PRICE number,	
+PROFIT_MARGIN number);
+		
+insert into T4.SETTLEMENT
+values (101, '아메리카노', 11, 350, 4000, 3650);
+insert into SETTLEMENT
+values (102, '카페라떼', 22, 400, 5000, 4600);
+insert into SETTLEMENT
+values (103, '에스프레소', 33, 600, 6000, 5400);
+insert into SETTLEMENT
+values (104, '우유', 44, 50, 3000, 2950);
+insert into SETTLEMENT
+values (105, '모닝빵', 55, 20, 2000, 1980);
+insert into SETTLEMENT
+values (106, '조각케잌', 66, 2000, 6000, 4000);
+insert into SETTLEMENT
+values (107, '쿠키', 77, 3000, 4000, 1000);
+insert into SETTLEMENT
+values (108, '마카롱', 88, 1200, 2500, 1300);
+insert into SETTLEMENT
+values (109, '아이스티', 99, 200, 6000, 5800);
+insert into SETTLEMENT
+values (110, '초코라떼', 100, 250, 6000, 5750);
+
+create table T4.STOCK
+(INGREDIENT_ID number primary key(10),
+INGREDIENT_NAME varchar2(50) NOT NULL,
+UNIT_COST number,
+AVAILABLE_STOCK number);
+
+insert into T4.stock
+values(201,'원두',600,100);
+insert into T4.stock
+values(202,'우유',300,100);
+insert into T4.stock
+values(203,'모닝빵',20,100);
+insert into T4.stock
+values(204,'조각케잌',2000,100);
+insert into T4.stock
+values(205,'쿠키',3000,100);
+insert into T4.stock
+values(206,'마카롱',1200,100);
+insert into T4.stock
+values(207,'초코시럽',10,100);
+insert into T4.stock
+values(208,'복숭아아이스티',3,100);
+
+create table T4.MEMBER
+(GUEST_NAME varchar2(50) NOT NULL,
+GUEST_PHONE  varchar2(13) PRIMARY KEY,
+GUEST_POINT number default 0);
+
+insert into T4.MEMBER (GUEST_NAME, GUEST_PHONE)
+values ( '옥택연', '01012341234');
+insert into MEMBER (GUEST_NAME, GUEST_PHONE)
+values ('차은우', '01023452345');
+insert into MEMBER (GUEST_NAME, GUEST_PHONE)
+values ( '최강창민', '01034563456');
+insert into MEMBER (GUEST_NAME, GUEST_PHONE)
+values ( '하현우', '01045674567');
+insert into MEMBER (GUEST_NAME, GUEST_PHONE)
+values ( '김윤아', '01056785678');
+insert into MEMBER (GUEST_NAME, GUEST_PHONE)
+values ( '박해일', '01067896789');
+insert into MEMBER (GUEST_NAME, GUEST_PHONE)
+values ( '박해진', '01078907890');
+insert into MEMBER (GUEST_NAME, GUEST_PHONE)
+values ( '홍경민', '01011231123');
+insert into MEMBER (GUEST_NAME, GUEST_PHONE)
+values ( '박보검', '01011341134');
+insert into MEMBER (GUEST_NAME, GUEST_PHONE)
+values ( '윤하', '01011451145');
+
+CREATE VIEW T4.view1
+AS
+SELECT  guest_name AS column1,
+guest_phone AS column2,
+guest_point AS column3
+FROM    T4.member;

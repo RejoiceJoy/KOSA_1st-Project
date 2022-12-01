@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane style="-fx-background-color:#ffffff" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Home_Controller">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="350.0">
+         <children>
+            <Label layoutX="61.0" layoutY="49.0" style="-fx-text-fill:#003580" text="reservation system" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="25.0" />
+               </font></Label>
+            <Button fx:id="reservego" layoutX="34.0" layoutY="278.0" mnemonicParsing="false" onAction="#reservego_me" onMouseClicked="#reservego_me" prefHeight="67.0" prefWidth="127.0" styleClass="button" text="예약하기" />
+            <Button fx:id="reserveshow" layoutX="190.0" layoutY="278.0" mnemonicParsing="false" onAction="#reserveshow_me" onMouseClicked="#reserveshow_me" prefHeight="67.0" prefWidth="127.0" styleClass="button" text="예약현황" />
+            <Button fx:id="showcar" layoutX="34.0" layoutY="369.0" mnemonicParsing="false" onAction="#showcar_me" onMouseClicked="#showcar_me" prefHeight="67.0" prefWidth="127.0" styleClass="button" text="배차조회" />
+            <Button fx:id="showmypage" layoutX="190.0" layoutY="369.0" mnemonicParsing="false" onAction="#showmypage_me" onMouseClicked="#showmypage_me" prefHeight="67.0" prefWidth="127.0" styleClass="button" text="마이페이지" />
+
+            <Button fx:id="logoutBtn" layoutX="258.0" layoutY="530.0" mnemonicParsing="false" onAction="#logout" onMouseClicked="#showmypage_me" styleClass="button" text="Logout" />
+            <ImageView fitHeight="109.0" fitWidth="91.0" layoutX="131.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+            	<image><Image url="file:lib/bus_image.png" /></image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.login_Controller">
+   <children>
+      <ImageView fitHeight="104.0" fitWidth="134.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true" y="69.0">
+         <image>
+            <Image url="file:lib/bus_image.png" />
+         </image>
+         <StackPane.margin>
+            <Insets bottom="230.0" />
+         </StackPane.margin>
+      </ImageView>
+   </children>
+</StackPane>

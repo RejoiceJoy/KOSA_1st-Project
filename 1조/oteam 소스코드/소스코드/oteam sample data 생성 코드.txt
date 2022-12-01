@@ -1,0 +1,111 @@
+--sample data 삽입 코드
+
+--region
+INSERT INTO region
+VALUES('02','서울');
+
+INSERT INTO region
+VALUES('051','부산');
+
+INSERT INTO region
+VALUES('053','대구');
+
+INSERT INTO region
+VALUES('032','인천');
+
+INSERT INTO region
+VALUES('062','광주');
+
+INSERT INTO region
+VALUES('042','대전');
+
+INSERT INTO region
+VALUES('052','울산');
+
+INSERT INTO region
+VALUES('044','세종');
+
+INSERT INTO region
+VALUES('031','경기');
+
+INSERT INTO region
+VALUES('033','강원');
+
+INSERT INTO region
+VALUES('043','충북');
+
+INSERT INTO region
+VALUES('041','충남');
+
+INSERT INTO region
+VALUES('063','전북');
+
+INSERT INTO region
+VALUES('061','전남');
+
+INSERT INTO region
+VALUES('054','경북');
+
+INSERT INTO region
+VALUES('055','경남');
+
+INSERT INTO region
+VALUES('064','제주');
+
+commit;
+
+--region 값 잘 들어갔는지 확인
+select * from region
+order by region_code asc;
+
+--member
+INSERT INTO members
+VALUES(member_SEQ.NEXTVAL, 'asdf', '1234', '김대영', '01012345678', '1998-09-01', 'M', '02');
+
+INSERT INTO members
+VALUES(member_SEQ.NEXTVAL, 'qwer', '1234', '이대영', '01012345670', '1995-06-03', 'F', '031');
+
+INSERT INTO members
+VALUES(member_SEQ.NEXTVAL, 'zxcv', '5678', '박대영', '01012345600', '1988-07-25', 'F', '042');
+
+commit;
+
+--값 잘 들어갔는지 확인
+select * from members;
+
+
+--household
+INSERT INTO household
+VALUES(household_SEQ.NEXTVAL,'지출','교통비','2022-11-14',12000,'출근길 택시비','1');
+
+INSERT INTO household
+VALUES(household_SEQ.NEXTVAL,'지출','식비','2022-11-16',24500,'친구들과 술자리','1');
+
+INSERT INTO household
+VALUES(household_SEQ.NEXTVAL,'지출','학원비','2022-11-06',300000,'토익 학원비','1');
+
+INSERT INTO household
+VALUES(household_SEQ.NEXTVAL,'수입','급여','2022-11-16',2000000,'월급','1');
+
+INSERT INTO household
+VALUES(household_SEQ.NEXTVAL,'지출','식비','2022-10-03',154000,'가족 외식','2');
+
+INSERT INTO household
+VALUES(household_SEQ.NEXTVAL,'지출','공과금','2022-10-18',27650,'전기세+가스비','2');
+
+INSERT INTO household
+VALUES(household_SEQ.NEXTVAL,'지출','문화','2022-10-20',16000,'영화관람','2');
+
+INSERT INTO household
+VALUES(household_SEQ.NEXTVAL,'지출','병원비','2022-09-01',24500,'치과 검진','3');
+
+INSERT INTO household
+VALUES(household_SEQ.NEXTVAL,'지출','모임','2022-09-26',54000,'동아리 엠티','3');
+
+INSERT INTO household
+VALUES(household_SEQ.NEXTVAL,'지출','통신비','2022-09-09',46000,'휴대폰 요금','3');
+
+INSERT INTO household
+VALUES(household_SEQ.NEXTVAL,'수입','급여','2022-09-29',850000,'아르바이트','3');
+
+commit;

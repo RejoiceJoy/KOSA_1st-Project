@@ -1,0 +1,56 @@
+.root {
+     -fx-background-color: #f3f3f3;
+     -fx-font-family: "LG Smart UI SemiBold";
+}
+
+.Label {
+	-fx-font-family: "LG Smart UI SemiBold";
+    -fx-text-fill: #f3f3f3;
+}
+
+
+.button {
+    -fx-text-fill: #fffff6;
+    -fx-font-family: "LG Smart UI SemiBold";
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(#7d83a4, #2f487d);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 10, 0 , 2 , 2 );
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#2f487d, #001957);
+    -fx-font-family: "LG Smart UI SemiBold";
+    -fx-text-fill: #ffd179;
+    -fx-font-size: 30px;
+}
+
+.button:pressed {
+    -fx-background-color: linear-gradient(#2f487d, #2f487d);
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #c4c5cd;	
+}
+
+#orderlist {
+	-fx-border-color: #c4c5cd;
+	-fx-border-width: 1;
+	-fx-border-radius: 20;
+
+}
+
+#memberlist {
+	-fx-border-color: #c4c5cd;
+	-fx-border-width: 1;
+	-fx-border-radius: 20;
+
+}
+
+#menuchoice {
+	-fx-border-radius: 20;
+	-fx-background-color: linear-gradient(#7d83a4, #2f487d);
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 10, 0 , 2 , 2 );
+	-fx-text-fill: #f3f3f3;
+	
+
+}

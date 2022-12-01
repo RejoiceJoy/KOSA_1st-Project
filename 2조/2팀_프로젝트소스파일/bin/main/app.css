@@ -1,0 +1,14 @@
+/*11/22 문수지 작성
+ * 
+ */
+
+.button {
+    -fx-text-fill: white;
+    -fx-font-family: "Arial";
+    -fx-background-color: linear-gradient(#003580, #08254f);
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 10, 0 , 2 , 2 );
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}

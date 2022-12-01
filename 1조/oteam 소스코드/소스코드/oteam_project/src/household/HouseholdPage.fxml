@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+
+<!-- 코드 작성자 : 김준영 -->
+<!-- top과 center, bottom 사용 위해 BorderPane 씀, 자바와 연결 위해 fx:controller 설정해줌-->
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" 
+prefWidth="810.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="household.HouseholdController">
+   
+   <!-- 프로그램의 메뉴 버튼 들어감 -->
+   <bottom>
+      <!-- 수평으로 넣음 -->
+      <HBox>
+         <children>
+            <!-- 첫번째 토글버튼으로 만들어둠, onAction(페이지 출력, #붙여야함) 추가 -->
+            <ToggleButton fx:id="household_button" mnemonicParsing="false" onAction="#household_menu" prefHeight="80.0" prefWidth="270.0" selected="true" text="가계부" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="36.0" />
+               </font>
+               <!-- 첫번째에 토글 그룹(fx:id="group") 만듬 -->
+               <toggleGroup>
+                  <ToggleGroup fx:id="toggleGroup" />
+               </toggleGroup>
+               </ToggleButton>
+            <!-- 두번째 토글 버튼부터 첫번째와 묶어줌, toggleGroup="$group", onAction(페이지 출력, #붙여야함) 추가 -->
+            <ToggleButton fx:id="stat_button" mnemonicParsing="false" onAction="#stats_menu" prefHeight="80.0" prefWidth="270.0" text="통계" toggleGroup="$group">
+               <font>
+                  <Font size="36.0" />
+               </font></ToggleButton>
+            <!-- 세번째 토글 버튼 첫번째와 묶어줌, toggleGroup="$group", onAction(페이지 출력, #붙여야함) 추가 -->
+            <ToggleButton fx:id="account_button" mnemonicParsing="false" onAction="#account_menu" prefHeight="80.0" prefWidth="270.0" text="계정관리" toggleGroup="$group">
+               <font>
+                  <Font size="36.0" />
+               </font></ToggleButton>
+         </children>
+      </HBox>
+   </bottom>
+   
+   <!-- 페이지 명칭 만듬 -->
+   <top>
+      <AnchorPane prefHeight="23.0" prefWidth="810.0">
+         <children>
+            <!-- Label로 넣어줌 -->
+            <Label layoutX="326.0" layoutY="7.0" prefHeight="50.0" prefWidth="139.0" text="나의 가계부">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   
+   <!-- 가게부의 상세 데이터베이스를 표로 출력함 -->
+   <center>
+      <!-- 수직으로 위는 사용자 인터페이스, 아래는 데이터베이스 표 출력 -->
+      <VBox prefHeight="775.0" prefWidth="622.0" BorderPane.alignment="CENTER">
+         <children>
+            <!-- 수직으로 위를 HBox(수평)추가하여 정렬함 -->
+            <HBox prefHeight="53.0" prefWidth="599.0">
+               <children>
+                  <!-- 가게부의 새로운 데이터 입력 버튼, onAction(입력,#붙여야함) 추가 -->
+                  <Button fx:id="insertmenu_button" mnemonicParsing="false" onAction="#insertmenu_act" prefHeight="35.0" prefWidth="62.0" text="추가">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </Button>
+                  <!-- 가게부 조회에서 처음설정 날짜 선택, fx:id(값 입력) 추가 -->
+                  <DatePicker fx:id="start_date" prefHeight="35.0" prefWidth="220.0" promptText="시작날짜를 입력">
+                     <HBox.margin>
+                        <Insets left="35.0" />
+                     </HBox.margin></DatePicker>
+                  <Label text=" ~ ">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Label>
+                  <!-- 가게부 조회에서 두번째설정 날짜 선택, fx:id(값 입력) 추가 -->
+                  <DatePicker fx:id="end_date" prefHeight="34.0" prefWidth="220.0" promptText="마지막 날짜 입력" />
+                  <!-- 가게부 조회에서 설정 날짜사이의 사용자 데이터 출력 버튼, onAction(조회,#붙여야함) 추가 -->
+                  <Button mnemonicParsing="false" onAction="#search_act" prefHeight="33.0" prefWidth="70.0" text="조회">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <!-- 가게부 조회에서 사용자 데이터 삭제 버튼, onAction(삭제,#붙여야함) 추가 -->
+                  <Button fx:id="delete_button" mnemonicParsing="false" onAction="#delete_act" prefHeight="34.0" prefWidth="68.0" text="삭제">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <!-- 수직으로 아래는 TableView 하나만 만듬, onMouseClicked(마우스 클릭 이벤트) 추가 -->
+            <TableView fx:id="table_view" onMouseClicked="#click_tableview" prefHeight="746.0" prefWidth="599.0">
+              <columns>
+                <!-- 각 TableColumn 클래스 생성 -->
+                <TableColumn fx:id="type_column" prefWidth="97.0" text="Type" />
+                <TableColumn fx:id="category_column" prefWidth="92.0" text="분류" />
+                <TableColumn fx:id="date_column" prefWidth="108.0" text="날짜" />
+                <TableColumn fx:id="money_column" prefWidth="126.0" text="금액" />
+                <TableColumn fx:id="memo_column" prefWidth="157.0" text="비고" />
+              </columns>
+            </TableView>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

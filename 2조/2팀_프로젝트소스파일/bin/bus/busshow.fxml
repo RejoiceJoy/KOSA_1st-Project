@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="350.0" style="-fx-background-color:#ffffff" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bus.Busshow_controller">
+   <children>
+      <AnchorPane layoutX="47.0" layoutY="149.0" prefHeight="58.0" prefWidth="257.0" style="-fx-background-color:#EBF4FF" />
+      <AnchorPane layoutX="47.0" layoutY="237.0" prefHeight="58.0" prefWidth="257.0" style="-fx-background-color:#EBF4FF" />
+      <AnchorPane layoutX="47.0" layoutY="325.0" prefHeight="58.0" prefWidth="257.0" style="-fx-background-color:#EBF4FF" />
+      <AnchorPane layoutX="47.0" layoutY="410.0" prefHeight="58.0" prefWidth="257.0" style="-fx-background-color:#EBF4FF" />
+      <AnchorPane layoutX="47.0" layoutY="149.0" prefHeight="58.0" prefWidth="71.0" style="-fx-background-color:#F0F0F0" />
+      <AnchorPane layoutX="47.0" layoutY="237.0" prefHeight="58.0" prefWidth="71.0" style="-fx-background-color:#F0F0F0" />
+      <AnchorPane layoutX="47.0" layoutY="325.0" prefHeight="58.0" prefWidth="71.0" style="-fx-background-color:#F0F0F0" />
+      <AnchorPane layoutX="47.0" layoutY="410.0" prefHeight="58.0" prefWidth="71.0" style="-fx-background-color:#F0F0F0" />
+      <Label fx:id="first_bustime" layoutX="64.0" layoutY="167.0" prefHeight="21.0" prefWidth="51.0" style="-fx-text-fill:#003580" text="출발시간" />
+      <Label fx:id="second_bustime" layoutX="66.0" layoutY="258.0" style="-fx-text-fill:#003580" text="출발시간" />
+      <Label fx:id="third_bustime" layoutX="66.0" layoutY="346.0" style="-fx-text-fill:#003580" text="출발시간" />
+      <Label fx:id="fourth_bustime" layoutX="66.0" layoutY="430.0" style="-fx-text-fill:#003580" text="출발시간" />
+      
+      <Label fx:id="first_buscode" layoutX="156.0" layoutY="156.0" prefHeight="21.0" prefWidth="106.0" style="-fx-text-fill:#003580" text="버스번호" />
+      <Label fx:id="second_buscode" layoutX="156.0" layoutY="247.0" style="-fx-text-fill:#003580" text="버스번호" />
+      <Label fx:id="third_buscode" layoutX="156.0" layoutY="335.0" style="-fx-text-fill:#003580" text="버스번호" />
+      <Label fx:id="fourth_buscode" layoutX="156.0" layoutY="420.0" style="-fx-text-fill:#003580" text="버스번호" />
+      
+      <Button fx:id="bus_show" layoutX="149.0" layoutY="530.0" mnemonicParsing="false" onAction="#getBustime" styleClass="button" text="조회" />
+      <Button fx:id="bus_close" layoutX="276.0" layoutY="530.0" mnemonicParsing="false" onAction="#busClose" onMouseClicked="#busClose" styleClass="button" text="닫기" />
+
+
+      <Label fx:id="leftseat_bus1" layoutX="146.0" layoutY="182.0" style="-fx-text-fill:#003580" text="잔여좌석" />
+      <Label fx:id="leftseat_bus2" layoutX="146.0" layoutY="270.0" style="-fx-text-fill:#003580" text="잔여좌석" />
+      <Label fx:id="leftseat_bus3" layoutX="144.0" layoutY="357.0" style="-fx-text-fill:#003580" text="잔여좌석" />
+      <Label fx:id="leftseat_bus4" layoutX="144.0" layoutY="441.0" style="-fx-text-fill:#003580" text="잔여좌석" />
+      <Label layoutX="132.0" layoutY="14.0" text="배차현황">
+         <font>
+            <Font size="25.0" />
+         </font></Label>
+      <ComboBox fx:id="bus_showlocation" layoutX="47.0" layoutY="106.0" onAction="#bus_comboChanged" promptText="선택" style="-fx-background-color: #EBF4FF; -fx-text-fill:#003580" />
+      <DatePicker fx:id="bus_rDatePicker" layoutX="47.0" layoutY="73.0" onAction="#bus_selectDate" style="-fx-background-color: #EBF4FF; -fx-text-fill:#003580" />
+      
+
+   </children>
+</AnchorPane>

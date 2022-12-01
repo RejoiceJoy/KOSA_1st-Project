@@ -1,0 +1,12 @@
+--코드 작성자 : 김대영
+
+--유저 생성
+drop user oteam cascade;
+ 
+create user oteam
+identified by oteam;
+
+--권한 부여
+grant connect, resource, dba 
+to oteam;  
+

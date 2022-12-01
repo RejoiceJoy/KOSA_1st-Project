@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MemberController">
+   <children>
+      <Label fx:id="memberlist" alignment="CENTER" layoutX="50.0" layoutY="28.0" prefHeight="150.0" prefWidth="500.0" text="포인트내역">
+         <font>
+            <Font name="LG Smart UI Bold" size="18.0" />
+         </font></Label>
+      <Label alignment="CENTER_RIGHT" layoutX="86.0" layoutY="193.0" prefHeight="50.0" prefWidth="150.0" text="이름">
+      	<font>
+            <Font name="LG Smart UI Regular" size="18.0" />
+         </font>
+         <padding>
+            <Insets right="20.0" />
+         </padding></Label>
+      <TextField fx:id="name" layoutX="236.0" layoutY="193.0" prefHeight="50.0" prefWidth="250.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="86.0" layoutY="250.0" prefHeight="50.0" prefWidth="150.0" text="휴대전화번호">
+      	<font>
+            <Font name="LG Smart UI Regular" size="18.0" />
+         </font>
+         <padding>
+            <Insets right="20.0" />
+         </padding></Label>
+      <TextField fx:id="phonenumber" layoutX="236.0" layoutY="250.0" prefHeight="50.0" prefWidth="250.0" />
+      <Button fx:id="savepoint" layoutX="120.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleSavepointAction" text="적립하기">
+      		<font>
+            <Font name="LG Smart UI Regular" size="18.0" />
+         </font>
+         </Button>
+      <Button fx:id="joinmember" layoutX="259.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleJoinmemberAction" text="가입하기">
+         <font>
+            <Font name="LG Smart UI Regular" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="viewpoint" layoutX="403.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleViewpointAction" text="조회하기">
+      	<font>
+            <Font name="LG Smart UI Regular" size="18.0" />
+         </font>
+         </Button>
+   </children>
+</AnchorPane>

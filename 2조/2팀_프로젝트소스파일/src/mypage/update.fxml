@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.*?>
+
+<AnchorPane style="-fx-background-color:#ffffff" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mypage.Update_Controller">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="350.0">
+         <children>
+            <Label layoutX="122.0" layoutY="45.0" style="-fx-text-fill:#003580" text="정보 수정" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="25.0" />
+               </font>
+            </Label>
+ 
+            <Label layoutX="40.0" layoutY="198.0" style="-fx-text-fill:#003580" text="PW" />
+            <PasswordField fx:id="aspw" layoutX="131.0" layoutY="191.0" promptText="비밀번호" />
+ 
+            <Label layoutX="40.0" layoutY="245.0" style="-fx-text-fill:#003580" text="Name" />
+            <TextField fx:id="asname" layoutX="131.0" layoutY="238.0" promptText="이름" />
+            <Label layoutX="40.0" layoutY="292.0" style="-fx-text-fill:#003580" text="Phone" />
+            <TextField fx:id="asphone" layoutX="131.0" layoutY="285.0" promptText="01000000000" />
+            <Label layoutX="40.0" layoutY="339.0" style="-fx-text-fill:#003580" text="Email" />
+            <TextField fx:id="asemail" layoutX="131.0" layoutY="332.0" promptText="bus@email.com" />
+            <Button layoutX="145.0" layoutY="527.0" mnemonicParsing="false" onAction="#updatecom" text="수정" />
+            <Button fx:id="close" layoutX="261.0" layoutY="527.0" mnemonicParsing="false" onAction="#close" text="닫기" />
+            <Button layoutX="262.0" layoutY="191.0" mnemonicParsing="false" onAction="#pwChk" text="Chk" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

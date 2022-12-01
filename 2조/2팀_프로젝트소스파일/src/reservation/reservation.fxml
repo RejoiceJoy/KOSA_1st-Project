@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="350.0" style="-fx-background-color:#ffffff" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="reservation.Reserve_controller">
+   <children>
+      <Label contentDisplay="RIGHT" layoutX="19.0" layoutY="105.0" style="-fx-text-fill:#003580" text="날짜선택" />
+      <DatePicker fx:id="rDatePicker" layoutX="103.0" layoutY="101.0" onAction="#selectDate" />
+      <Label contentDisplay="RIGHT" layoutX="19.0" layoutY="156.0" style="-fx-text-fill:#003580" text="탑승장소" />
+
+      <ComboBox fx:id="HopOnLocation" layoutX="103.0" layoutY="153.0" onAction="#comboChanged" promptText="선택" style="-fx-background-color: #EBF4FF; -fx-text-fill:#003580" />
+
+      <Label contentDisplay="RIGHT" layoutX="17.0" layoutY="208.0" style="-fx-text-fill:#003580" text="선호좌석" />
+      <RadioButton fx:id="seat1" layoutX="106.0" layoutY="209.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-text-fill:#003580" text="복도측" />
+      <RadioButton fx:id="seat2" layoutX="215.0" layoutY="209.0" mnemonicParsing="false" onAction="#selectSeat" style="-fx-text-fill:#003580" text="창가측" />
+
+      <Button layoutX="145.0" layoutY="532.0" mnemonicParsing="false" onAction="#reserveBtn" styleClass="button" text="예약" />
+      <Button fx:id="reserveclose" layoutX="276.0" layoutY="532.0" mnemonicParsing="false" onAction="#reservecloseBtn" styleClass="button" text="닫기" />
+
+      <Label layoutX="125.0" layoutY="29.0" style="-fx-text-fill:#003580" text="예약하기">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+ 
+      <TableView fx:id="table" layoutX="10.0" layoutY="260.0" prefHeight="172.0" prefWidth="331.0" style="-fx-background-color: #EBF4FF; -fx-text-fill:#003580">
+        <columns>
+          <TableColumn fx:id="columnbusRealcode" prefWidth="91.0" style="-fx-text-fill:#003580" text="번 호" />
+          <TableColumn fx:id="columnbusCode" prefWidth="78.0" style="-fx-text-fill:#003580" text="등록번호" />
+          <TableColumn fx:id="columnbusLocation" minWidth="0.0" prefWidth="63.0" style="-fx-text-fill:#003580" text="탑승지" />
+          <TableColumn fx:id="columnbusTime" minWidth="0.0" prefWidth="55.0" style="-fx-text-fill:#003580" text="시간" />
+          <TableColumn fx:id="columnbusSize" minWidth="0.0" prefWidth="42.0" style="-fx-text-fill:#003580" text="크기" />
+        </columns>
+      </TableView>
+      
+      <Label fx:id="reserve_selected" layoutX="10.0" layoutY="440.0" prefHeight="43.0" prefWidth="331.0" style="-fx-text-fill:#003580" text="선택 내역" />
+      <Label fx:id="availableseat" layoutX="10.0" layoutY="476.0" prefHeight="43.0" prefWidth="331.0" style="-fx-text-fill:#003580" />
+      
+   </children>
+</AnchorPane>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.*?>
+
+<AnchorPane style="-fx-background-color:#ffffff" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.SignUp_Controller">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="350.0">
+         <children>
+            <Label layoutX="130.0" layoutY="45.0" style="-fx-text-fill:#003580" text="Register" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="25.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="150.0" style="-fx-text-fill:#003580" text="ID" />
+            <TextField fx:id="sid" layoutX="131.0" layoutY="143.0" promptText="아이디" />
+            <Button fx:id="idchkBtn" layoutX="244.0" layoutY="143.0" mnemonicParsing="false" onAction="#idChk" styleClass="button" text="Chk" />
+ 
+            <Label layoutX="40.0" layoutY="198.0" style="-fx-text-fill:#003580" text="PW" />
+            <PasswordField fx:id="spw" layoutX="131.0" layoutY="191.0" promptText="비밀번호" />
+            <Button fx:id="pwchkBtn" layoutX="244.0" layoutY="191.0" mnemonicParsing="false" onAction="#pwChk" styleClass="button" text="Chk" />
+ 
+            <Label layoutX="40.0" layoutY="245.0" style="-fx-text-fill:#003580" text="Name" />
+            <TextField fx:id="sname" layoutX="131.0" layoutY="238.0" promptText="이름" />
+            <Label layoutX="40.0" layoutY="292.0" style="-fx-text-fill:#003580" text="Phone" />
+            <TextField fx:id="sphone" layoutX="131.0" layoutY="285.0" promptText="01000000000" />
+            <Label layoutX="40.0" layoutY="339.0" style="-fx-text-fill:#003580" text="Email" />
+            <TextField fx:id="semail" layoutX="131.0" layoutY="332.0" promptText="bus@email.com" />
+            <Label layoutX="40.0" layoutY="385.0" style="-fx-text-fill:#003580" text="탑승지역" />
+            <Label layoutX="40.0" layoutY="430.0" style="-fx-text-fill:#003580" text="선호좌석" />
+  
+            <ComboBox fx:id="addresscombo" layoutX="131.0" layoutY="379.0" onAction="#addressComboChange" promptText="선택하세요" style="-fx-background-color: #EBF4FF; -fx-text-fill:#003580">
+				<items>
+            		<FXCollections fx:factory="observableArrayList"> <!-- 기본 생성자가 없는 클래스에 대해 객체 생성하는 방법 (fx:factory 속성) -->
+	           			<String fx:value="강남" />
+            			<String fx:value="강서" />
+            			<String fx:value="강북" />
+            			<String fx:value="강동" />
+            		</FXCollections>
+            	</items>
+            </ComboBox>	
+            <ComboBox fx:id="favseatcombo" layoutX="131.0" layoutY="424.0" onAction="#favseatComboChange" promptText="선택하세요" style="-fx-background-color: #EBF4FF; -fx-text-fill:#003580">
+				<items>
+            		<FXCollections fx:factory="observableArrayList">
+            			<String fx:value="창가측" />
+            			<String fx:value="복도측" />
+            		</FXCollections>
+            	</items>
+            </ComboBox>
+ 
+            <Button fx:id="signupcompleteBtn" layoutX="146.0" layoutY="519.0" mnemonicParsing="false" onAction="#signupcompleteBtn" onMouseClicked="#signupcompleteBtn" styleClass="button" text="완료" />
+            <Button fx:id="signUpClose" layoutX="262.0" layoutY="519.0" mnemonicParsing="false" onAction="#signUpClose" onMouseClicked="#signupcompleteBtn" styleClass="button" text="닫기" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

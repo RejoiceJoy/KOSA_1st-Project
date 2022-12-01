@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.*?>
+
+<!-- 코드 작성자 : 김준영 -->
+<!-- 수직으로 나열하기 위해 VBox를 씀, 자바와 연결 위해 fx:controller 설정해줌 -->
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="527.0" 
+prefWidth="402.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="household.HouseholdInsertController">
+
+   <children>
+   
+	  <!-- 위에서 부터 첫번째 ComboBox, 값을 담기 위해 fx:id 해줌 -->
+      <ComboBox fx:id="combo1_menu" prefHeight="33.0" prefWidth="200.0" promptText="       수입/지출">
+      	 <items>
+      	    <!-- ComboBox 안에 FXCollections 클래스 생성(선택할수 있게) -->
+			<FXCollections fx:factory="observableArrayList">
+				<String fx:value="수입" />
+				<String fx:value="지출" />
+			</FXCollections>        
+		 </items>
+		 <!-- VBox 안의 위치 -->
+         <VBox.margin>
+            <Insets left="100.0" top="20.0" />
+         </VBox.margin>
+         
+      <!-- 위에서 부터 두번째 ComboBox, 값을 담기 위해 fx:id 해줌 -->
+      </ComboBox>
+      <ComboBox fx:id="combo2_menu" prefHeight="33.0" prefWidth="200.0" promptText="           내용">
+      	 <items>
+      	    <!-- ComboBox 안에 FXCollections 클래스 생성(선택할수 있게) -->
+			<FXCollections fx:factory="observableArrayList">
+				<String fx:value="수입" />
+				<String fx:value="공과금" />
+				<String fx:value="식비" />
+				<String fx:value="교통비" />
+				<String fx:value="생활비" />
+				<String fx:value="여가생활" />
+				<String fx:value="패션/미용" />
+				<String fx:value="교육" />
+				<String fx:value="기타" />
+			</FXCollections>        
+		 </items>
+         <VBox.margin>
+            <Insets left="100.0" top="20.0" />
+         </VBox.margin>
+      </ComboBox>
+      
+      <!-- 위에서 부터 세번째 DatePicker, 값을 담기 위해 fx:id 해줌 -->
+      <DatePicker fx:id="now_date" prefHeight="33.0" prefWidth="200.0" promptText="입력 날짜 선택">
+         <VBox.margin>
+            <Insets left="100.0" top="20.0" />
+         </VBox.margin>
+      </DatePicker>
+      
+      <!-- 위에서 부터 네번째 TextField, 값을 담기 위해 fx:id 해줌 -->
+      <TextField fx:id="money_text" prefHeight="33.0" prefWidth="147.0" promptText="사용 금액(원)">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets left="100.0" right="100.0" top="20.0" />
+         </VBox.margin>
+      </TextField>
+      
+      <!-- 위에서 부터 다섯번째 TextArea, 값을 담기 위해 fx:id 해줌 -->
+      <TextArea fx:id="etc_text" prefHeight="200.0" prefWidth="357.0" promptText="비고">
+         <VBox.margin>
+            <Insets left="50.0" right="50.0" top="20.0" />
+         </VBox.margin>
+      </TextArea>
+      
+      <!-- 위에서 부터 여섯번째 Button, 기능을 위해 onAction(#붙여야함) 해줌 -->
+      <Button fx:id="insert_button" mnemonicParsing="false" onAction="#insert_act" prefHeight="41.0" prefWidth="72.0" text="입력">
+         <VBox.margin>
+            <Insets left="165.0" top="30.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>

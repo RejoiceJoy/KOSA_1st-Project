@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<!-- 코드 작성자 : 김대영 -->
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="810.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.MainController">
+
+   <children>
+   
+   		<!-- 안내 메세지 첫 줄 출력 라벨 -->
+      <Label alignment="CENTER" layoutX="101.0" layoutY="159.0" prefHeight="30.0" prefWidth="550.0" text="아래의 버튼을 선택하여 " AnchorPane.leftAnchor="101.0" AnchorPane.rightAnchor="101.0" AnchorPane.topAnchor="159.0">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+         
+         <!-- 안내 메세지 두 번째 줄 출력 라벨 -->
+      <Label alignment="CENTER" layoutX="102.0" layoutY="208.0" text="원하는 메뉴로 이동하세요." AnchorPane.leftAnchor="102.0" AnchorPane.rightAnchor="102.0">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+      
+      <!-- 토글버튼 : 가계부 --> 
+      <ToggleButton fx:id="householdButton" layoutX="33.0" layoutY="839.0" mnemonicParsing="false" onAction="#selectToggleButton" prefHeight="80.0" prefWidth="270.0" style="-fx-border-color: deepskyblue;" text="가계부" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+      
+      	<!-- 토글 그룹 생성 -->
+         <toggleGroup>
+            <ToggleGroup fx:id="toggleGroup" />
+         </toggleGroup>
+         <font>
+            <Font size="36.0" />
+         </font>
+      </ToggleButton>
+      
+      <!-- 토글버튼 : 통계 -->
+      <ToggleButton fx:id="chartButton" layoutX="270.0" layoutY="819.0" mnemonicParsing="false" onAction="#selectToggleButton" prefHeight="80.0" prefWidth="270.0" style="-fx-border-color: deepskyblue;" text="통계" toggleGroup="$toggleGroup" AnchorPane.bottomAnchor="0.0">
+         <font>
+            <Font size="36.0" />
+         </font></ToggleButton>
+      
+      <!-- 토글버튼 : 계정관리 -->
+      <ToggleButton fx:id="accountButton" layoutX="540.0" layoutY="818.0" mnemonicParsing="false" onAction="#selectToggleButton" prefHeight="80.0" prefWidth="270.0" style="-fx-border-color: deepskyblue;" text="계정관리" toggleGroup="$toggleGroup" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <font>
+            <Font size="36.0" />
+         </font></ToggleButton>
+       
+   </children>
+</AnchorPane>
