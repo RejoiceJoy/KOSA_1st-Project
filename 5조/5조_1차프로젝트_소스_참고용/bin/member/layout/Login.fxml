@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- 레이아웃 구성: 최영광 / JavaFX Scene Builder 이용 -->
+<!-- 작업 시에 창의 크기를 유동적으로 조절하기 위해서 AnchorPane을 선택했습니다. -->
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="member.LoginController">
+   <children>
+   <!-- 아이디 입력칸은 여러 줄의 문자열을 입력하지 않으므로, TextField를 사용했습니다. -->
+      <TextField fx:id="idField" layoutX="188.0" layoutY="432.0" prefHeight="40.0" prefWidth="298.0" promptText="아이디를 입력하세요">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TextField>
+      <!-- 비밀번호는 가려져야 하는 필드입니다. 따라서 passwordField를 사용하여 비밀번호의 노출을 막았습니다. -->
+      <PasswordField fx:id="pwField" layoutX="188.0" layoutY="494.0" prefHeight="40.0" prefWidth="298.0" promptText="비밀번호를 입력하세요" />
+      <Label layoutX="83.0" layoutY="425.0" prefHeight="55.0" prefWidth="105.0" text="아이디">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="83.0" layoutY="487.0" prefHeight="55.0" prefWidth="105.0" text="비밀번호">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="loginBtn" alignment="CENTER" layoutX="166.0" layoutY="631.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="114.0" text="로그인">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="membershipBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="313.0" layoutY="631.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="114.0" text="회원가입">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="54.0" layoutY="91.0" prefHeight="145.0" prefWidth="496.0" text="여행자를 위한 7일 여행 일정 플래너">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

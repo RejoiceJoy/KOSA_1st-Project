@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<!-- 작성자 : 이혜성, JavaFX Scene Builder 이용 -->
+<!-- 가입 시 중복된 ID를 입력한 경우 표시할 오류 창 -->
+<AnchorPane prefHeight="170.0" prefWidth="397.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+fx:controller="member.MembershipErr2Controller">
+   <children> 
+      <Label layoutX="91.0" layoutY="39.0" prefHeight="33.0" prefWidth="277.0" text="아이디가 중복되었습니다!" textOverrun="CLIP" />
+      <Button fx:id="closeBtn1" layoutX="169.0" layoutY="97.0" mnemonicParsing="false" text="확인" />
+   </children>
+</AnchorPane>

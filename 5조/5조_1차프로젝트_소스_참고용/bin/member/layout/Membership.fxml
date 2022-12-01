@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- 레이아웃 구성: 최영광 / JavaFX Scene Builder 이용 -->
+<!-- 입력받는 값들은 여러 열의 입력을 받을 필요는 없으므로, TextField를 사용했습니다 -->
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="580.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="member.MembershipController">
+   <children>
+      <TextField fx:id="idField" layoutX="257.0" layoutY="182.0" prefHeight="46.0" prefWidth="236.0" />
+      <Label layoutX="74.0" layoutY="174.0" prefHeight="62.0" prefWidth="111.0" text="*아이디">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="165.0" layoutY="21.0" prefHeight="92.0" prefWidth="250.0" text="회원가입">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="74.0" layoutY="244.0" prefHeight="62.0" prefWidth="111.0" text="*비밀번호">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <!--비밀번호와 비밀번호 확인 칸에서는 입력 도중 비밀번호 노출을 막기 위해 PasswordField를 사용했습니다 -->
+      <PasswordField fx:id="pwField1" layoutX="257.0" layoutY="252.0" prefHeight="46.0" prefWidth="236.0" />
+      <Label layoutX="74.0" layoutY="312.0" prefHeight="62.0" prefWidth="165.0" text="*비밀번호 확인">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="pwField2" layoutX="257.0" layoutY="320.0" prefHeight="46.0" prefWidth="236.0" />
+      <Label layoutX="74.0" layoutY="374.0" prefHeight="62.0" prefWidth="111.0" text="*이름">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="74.0" layoutY="437.0" prefHeight="62.0" prefWidth="111.0" text="*전화번호">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameField" layoutX="257.0" layoutY="382.0" prefHeight="46.0" prefWidth="236.0" />
+      <TextField fx:id="phoneField" layoutX="257.0" layoutY="445.0" prefHeight="46.0" prefWidth="236.0" />
+      <Label layoutX="80.0" layoutY="520.0" prefHeight="62.0" prefWidth="396.0" text="* 표시가 있는 항목은 필수 사항입니다.">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="backBtn" layoutX="252.0" layoutY="712.0" mnemonicParsing="false" text="돌아가기">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="applyBtn" layoutX="194.0" layoutY="597.0" mnemonicParsing="false" text="가입하기">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
